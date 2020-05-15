@@ -1,0 +1,105 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+a {
+	color: #e67e22;
+}
+
+a:hover {
+	color: #d35400;
+	
+}
+
+/*	HEADER */
+.header {
+	background:#2c3e50;
+	width:100%;
+	padding:20px;
+	display:flex;
+}
+
+.header .title {
+	color: #d35400;
+    line-height: 40px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.header .nav {
+	width: 100%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	background-color: #e67e22 !important;
+}
+
+.dropdown button {
+	width: 100%;
+    border-radius: 0px
+}
+
+.dropdown-toggle::after {
+	display: none;
+}
+
+.dropdown-menu {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	transform: none !important;
+	margin-top: 38px;
+}
+
+
+/* CONTENT */
+.contenido {
+	min-height: 1100px
+}
+.content {
+	display: inline-flex;
+}
+
+main {
+	margin-top: 20px;
+}
+
+.content-cv ul {
+	padding-left: 20px;
+}
+
+article {
+	margin:10px;
+	padding: 20px;
+	border-bottom: 1px solid;
+}
+
+article:last-child {
+	border-bottom: 0;
+}
+
+aside {
+	background: #e67e22;
+	padding: 15px;
+	height: 100%;
+}
+
+aside .widget {
+	background: #d35400;
+	height:150px;
+	margin:10px;
+	flex-wrap: wrap;
+}
+
+/* FOOTER */
+.footer {
+	background:#2c3e50;
+	width:100%;
+	padding:20px;
+}
+
+

@@ -1,0 +1,31 @@
+.movil-hide {
+	display: flex;
+}
+
+
+/**
+ * VISTA TABLET
+ */
+@media (min-width: 576px) and (max-width: 768px)
+{
+	.movil-hide {
+		display: none;
+	}
+}
+
+
+/**
+ * VISTA MOBIL
+ */
+
+@media screen and (max-width: 576px)
+{
+	.movil-hide {
+		display: none;
+	}
+
+	.header .title {
+		font-size: 9vw;
+		text-align: center;
+	}
+}

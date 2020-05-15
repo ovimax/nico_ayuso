@@ -52,7 +52,7 @@ a:hover {
 	margin: 0;
 	border-radius: 0;
 	transform: none !important;
-	margin-top: 38px;
+	margin-top: 45px;
 }
 
 
@@ -62,6 +62,7 @@ a:hover {
 }
 .content {
 	display: inline-flex;
+	width: 100%;
 }
 
 main {
@@ -93,6 +94,36 @@ aside .widget {
 	height:150px;
 	margin:10px;
 	flex-wrap: wrap;
+}
+
+.firma{
+	border: 1px solid #e67e22;
+    padding: 15px;
+    margin: 5px 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #e67e22;
+    border-color:#e67e22;
+}
+
+.btn-secondary, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle,.btn-secondary.focus, .btn-secondary:focus {
+    color: #fff;
+    background-color: #d35400;
+    border-color: #d35400;
+}
+
+
+.btn-primary:hover {
+	color: #fff;
+    background-color: #d35400;
+    border-color:#d35400;
+}
+
+.form-control:focus {
+    border-color: #e67e22;
+	box-shadow: 0 0 0 0.2rem rgba(230,126,34,.25);
 }
 
 /* FOOTER */

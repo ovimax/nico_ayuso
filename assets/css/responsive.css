@@ -1,6 +1,11 @@
+.hide, .movil-show{
+	display: none;
+}
+
 .movil-hide {
 	display: flex;
 }
+
 
 
 /**
@@ -24,8 +29,16 @@
 		display: none;
 	}
 
+	.movil-show{
+		display: block;
+	}
+
 	.header .title {
 		font-size: 9vw;
 		text-align: center;
+	}
+
+	.content {
+	    width: auto;
 	}
 }

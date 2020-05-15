@@ -1,35 +1,31 @@
 <?php
+// Definimos la consulta para la base de datos
+$sql = "SELECT * FROM datos ORDER BY fecha DESC LIMIT 1"; // Seleccionamos de la base de datos el ultimo registro de la tabla datos
 
-$HOST = 'localhost';
-$USER = 'admin';
-$PASS = 'P@ssw0rd';
-$DB   = 'nicolasayusobernal';
+// Lanzamos la consulta y recogemos los datos en caso de que hubieran y la  consulta haya sido correcta
+$response = $con->query($sql);
+$results = array();
 
-$con = new mysqli($HOST,$USER, $PASS, $DB);
-// Check connection
-if ($this->con->connect_error)
-{
-	die('Conection failed: '. $this->con->connect_error);
-}
-
-$sql = "SELECT * datos ORDER BY date DESC LIMIT 1";
-$result = $con->query($sql);
-if(!$result)
-{
-	$result = NULL;
-}else{
-	if (isset($result->num_rows) && $result->num_rows > 0){
-		while($row = $result->fetch_assoc())
-		{
-			$result[] = $row;
-		}
-		$result = $result;
-	}else
+if ($response && isset($response->num_rows) && $response->num_rows > 0){
+	while($row = $response->fetch_assoc())
 	{
-		$result = NULL;
+		array_push($results,$row);
 	}
 }
-$con->close();
-
 ?>
 
+<h1>SENSOR #<?= $results[0]["id"] ?></h1>
+<p><span>FECHA:</span> <?= $results[0]["fecha"] ?></p>
+<p><span>TEMPERATURA:</span> <?= $results[0]["temperatura"] ?> ºC</p>
+<p><span>HUMEDAD:</span> <?= $results[0]["humedad"] ?> %</p>
+
+<table class="table table-bordered">
+	<tr>
+		<th>TEMPERATURA</th>
+		<th>HUMEDAD</th>
+	</tr>
+	<tr>
+		<td><?= $results[0]["temperatura"] ?> ºC</td>
+		<td><?= $results[0]["humedad"] ?> %</td>
+	</tr>
+</table>

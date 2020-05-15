@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL|E_STRICT); //Activar todos los error
 $uri = $_SERVER['REQUEST_URI'];
 $main_name = "Nicol&aacute;s Ayuso Bernal";
 
@@ -7,6 +8,20 @@ if($uri == "/") {
 }
 
 $uri = str_replace("/","",$uri);
+// Definir las variables de conexion
+$HOST = 'localhost';
+$USER = 'admin';
+$PASS = 'P@ssw0rd';
+$DB   = 'nicolasayusobernal';
+
+// Realizar la conexion a la base de datos
+$con = new mysqli($HOST,$USER, $PASS, $DB);
+
+// Verificamos si la conexion ha dado un error y lo mostramos
+if ($con->connect_error)
+{
+	die('Conection failed: '. $con->connect_error);
+}
 
 //var_dump($uri);
 ?>
@@ -19,7 +34,7 @@ $uri = str_replace("/","",$uri);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="onsistems">
-	<meta name="description" content="P&aacute;gina web de mi proyecto de fin de grado con la ayuda de @onsistems.">
+	<meta name="description" content="P&aacute;gina web de mi proyecto de fin de grado.">
 	<meta name="keywords" content="HTML, CSS, JavaScript, PHP">
 	<link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
 
@@ -39,7 +54,7 @@ $uri = str_replace("/","",$uri);
 			<a class="nav-link" href="/contacto" id="nav-contacto">Contacto</a>
 		</nav>
 	</div>
-	<div class="dropdown">
+	<div class="dropdown movil-show">
 	  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    	<svg class="bi bi-list" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 013 11h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 7h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5zm0-4A.5.5 0 013 3h10a.5.5 0 010 1H3a.5.5 0 01-.5-.5z" clip-rule="evenodd"/></svg>
 		</button>
@@ -55,9 +70,11 @@ $uri = str_replace("/","",$uri);
 
 	<div class="container contenido">
 		<div class="content row">
-			<main class="col-sm-10"><?php include "vistas/".$uri.".php"; ?></main>
+			<main class="col-sm-10"><?php include "vistas/".$uri.".php"; $con->close();?></main>
 			<aside class="col-sm-2">
-				<div class="widget"></div>
+				<div class="widget">
+					<p>No te vaya sin firmar en el <a href="/contacto">Libro de Visitas</a></p>
+				</div>
 				<div class="widget"></div>
 				<div class="widget"></div>
 				<div class="widget">
@@ -77,7 +94,6 @@ $uri = str_replace("/","",$uri);
 				<a class="nav-link" href="/curriculum">Curriculum</a>
 				<a class="nav-link" href="/contacto">Contacto</a>
 			</nav>
-			<p>Created by <a href="https://onsistems.com/">@onsistems</a></p>
 		</div>
 	</div>
 

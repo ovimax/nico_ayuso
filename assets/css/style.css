@@ -85,7 +85,7 @@ article:last-child {
 
 aside {
 	background: #e67e22;
-	padding: 15px;
+	padding: 5px !important;
 	height: 100%;
 }
 
@@ -93,7 +93,23 @@ aside .widget {
 	background: #d35400;
 	height:150px;
 	margin:10px;
+	padding: 10px ;
 	flex-wrap: wrap;
+	justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    font-size: 16px;
+}
+
+aside .widget a {
+	color:#2c3e50;
+	font-size: 18px;
+	font-weight:bold;
+}
+
+aside .widget .date {
+	width: 100%;
 }
 
 .firma{

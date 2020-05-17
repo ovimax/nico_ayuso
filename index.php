@@ -8,6 +8,12 @@ if($uri == "/") {
 }
 
 $uri = str_replace("/","",$uri);
+
+// Si no existe la vista, mostrasmos un 404
+if(!file_exists("vistas/".$uri.".php")){
+	$uri = "404";
+}
+
 // Definir las variables de conexion
 $HOST = 'localhost';
 $USER = 'admin';

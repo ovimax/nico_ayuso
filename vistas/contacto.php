@@ -40,20 +40,19 @@ if ($response && isset($response->num_rows) && $response->num_rows > 0){
   <path fill-rule="evenodd" d="M0 4.5A1.5 1.5 0 011.5 3h13A1.5 1.5 0 0116 4.5v1.384l-7.614 2.03a1.5 1.5 0 01-.772 0L0 5.884V4.5zm5-2A1.5 1.5 0 016.5 1h3A1.5 1.5 0 0111 2.5V3h-1v-.5a.5.5 0 00-.5-.5h-3a.5.5 0 00-.5.5V3H5v-.5z" clip-rule="evenodd"/>
 </svg><a href="https://www.linkedin.com/in/nicol%C3%A1s-ayuso-bernal-243b901a8/" target="_blank"> Linkedin | Nicolás Ayuso Bernal</a></p>
 
-<h2>Registra tu visita</h2>
-
-<form action="contacto" method="POST">
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Nombre</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre..." name="name" required="required">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Texto</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" maxlength="200" name="text" required="required" placeholder="Max 150 caracteres"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
-
+<div id="registro"><h2>Registra tu visita</h2>
+	<form action="contacto" method="POST">
+	  <div class="form-group">
+	    <label for="exampleFormControlInput1">Nombre</label>
+	    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre..." name="name" required="required">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleFormControlTextarea1">Texto</label>
+	    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" maxlength="200" name="text" required="required" placeholder="Max 150 caracteres"></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+</div>
 <br>
 <h3><b>LISTADO DE FIRMAS</b></h3>
 <?php foreach($results as $key=>$value): ?>

@@ -79,7 +79,7 @@ if ($con->connect_error)
 			<main class="col-sm-10"><?php include "vistas/".$uri.".php"; $con->close();?></main>
 			<aside class="col-sm-2">
 				<div class="widget">
-					<p>No te vaya sin firmar en el <br><a href="/contacto">Libro de Visitas</a></p>
+					<p>No te vaya sin firmar en el <br><a href="/contacto#registro">Libro de Visitas</a></p>
 				</div>
 				<div class="widget">Como hacer un servidor web con una Rasberry Pi<br><a href="proyectos">AQUI</a></div>
 				<div class="widget">

@@ -14,6 +14,7 @@ if ($response && isset($response->num_rows) && $response->num_rows > 0){
 }
 $last = end($results); // obtenemos el ultimo registro
 
+// Buscamos los primeros registro min y max, de la temperatura y humedad
 $min_temperatura = min(array_column($results, 'temperatura'));
 $max_temperatura = max(array_column($results, 'temperatura'));
 

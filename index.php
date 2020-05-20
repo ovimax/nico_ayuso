@@ -1,12 +1,14 @@
 <?php
 error_reporting(E_ALL|E_STRICT); //Activar todos los error
 $uri = $_SERVER['REQUEST_URI'];
-$main_name = "Nicol&aacute;s Ayuso Bernal";
+$main_name = "Nicol&aacute;s Ayuso Bernal"; //pequeña variable PHP para usar en el HTML
 
+//si la ruta es la inicial mostramos la vista home
 if($uri == "/") {
 	$uri = "/home";
 }
 
+// limpiamos la ruta, le quitamos '/'
 $uri = str_replace("/","",$uri);
 
 // Si no existe la vista, mostrasmos un 404
@@ -28,8 +30,6 @@ if ($con->connect_error)
 {
 	die('Conection failed: '. $con->connect_error);
 }
-
-//var_dump($uri);
 ?>
 
 <!DOCTYPE html>
@@ -117,11 +117,12 @@ if ($con->connect_error)
 	<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 	<script>
-		$(document).ready(()=>{
+		$(document).ready(() => {
+			// Pequeño js script, que activa la tab segun la ruta en la que no econtramos
 			var nav_link = "<?= $uri ?>";
 			$(".nav-link").removeClass("active");
-			$("#nav-"+nav_link).addClass("active");
-		})
+			$("#nav-" + nav_link).addClass("active");
+		});
 	</script>
 </footer>
 	

@@ -1,11 +1,12 @@
 <?php
 if( (isset($_POST["name"]) && isset($_POST["text"]))){
-	// Definimos la consulta para la base de datos
+	// Definimos la consulta para la base de datos, para guardar el nevo registro
 	$sql = "INSERT INTO libro_visitas (name, text) VALUES ('".$_POST["name"]."', '".$_POST["text"]."');";
 	$con->query($sql);
 	$con->close();
-	header('Location: contacto');
+	header('Location: contacto'); //recargamos la pagina para reiniciar las variable POST de PHP
 } else {
+	// Obtenemos los registro en el orden de fecha destendiente
 	$sql = "SELECT * FROM libro_visitas ORDER BY date DESC";
 }
 
@@ -55,7 +56,10 @@ if ($response && isset($response->num_rows) && $response->num_rows > 0){
 </div>
 <br>
 <h3><b>LISTADO DE FIRMAS</b></h3>
-<?php foreach($results as $key=>$value): ?>
+<?php 
+	// recoremos todas los resultado de la base de datos, y las mostramos en la misma estructura HTML
+	foreach($results as $key=>$value): 
+?>
 
 	<div class="firma">
 		<p><b><?= ($value["name"]==" ")?"Anonimo":$value["name"] ?></b> | <span class="fecha"><i><?= date_format(date_create($value["date"]),"d-m-Y") ?></span></i> </p>
